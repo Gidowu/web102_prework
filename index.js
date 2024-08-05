@@ -48,7 +48,6 @@ function addGamesToPage(games) {
     }
 }
 
-
 // call the function we just defined using the correct variable
 addGamesToPage(GAMES_JSON);
 
@@ -67,11 +66,13 @@ const totalContributions = GAMES_JSON.reduce((acc, game) => acc + game.backers, 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
 contributionsCard.innerHTML = `Total Contributions: ${totalContributions.toLocaleString()}`;
 
-// grab the amount raised card, then use reduce() to find the total amount raised
+// grab the amount raised card
 const raisedCard = document.getElementById("total-raised");
+
+// use reduce() to find the total amount raised
 const totalRaised = GAMES_JSON.reduce((acc, game) => acc + game.pledged, 0);
 
-// set inner HTML using template literal
+// set inner HTML using template literal with a dollar sign
 raisedCard.innerHTML = `Total Raised: $${totalRaised.toLocaleString()}`;
 
 // grab number of games card and set its inner HTML
