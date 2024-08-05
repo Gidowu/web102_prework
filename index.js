@@ -133,18 +133,17 @@ allBtn.addEventListener("click", showAllGames);
 // grab the description container
 const descriptionContainer = document.getElementById("description-container");
 
-// use filter or reduce to count the number of unfunded games
+// Use filter to count the number of unfunded games
+// If you don’t want to display the unfunded games count, comment out or remove this block
+/*
 const numberOfUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal).length;
-
-// create a string that explains the number of unfunded games using the ternary operator
 const descriptionText = numberOfUnfundedGames === 0
     ? "All games are fully funded!"
     : `${numberOfUnfundedGames} game(s) are still unfunded.`;
-
-// create a new DOM element containing the template string and append it to the description container
 const descriptionElement = document.createElement("p");
 descriptionElement.innerHTML = descriptionText;
 descriptionContainer.appendChild(descriptionElement);
+*/
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -157,11 +156,15 @@ const secondGameContainer = document.getElementById("second-game");
 // Sort games by amount pledged in descending order
 const sortedGames = GAMES_JSON.sort((a, b) => b.pledged - a.pledged);
 
-// use destructuring and the spread operator to grab the first and second games
+// Use destructuring to grab the first and second games
 const [topGame, runnerUp] = sortedGames;
 
-// create a new element to hold the name of the top pledge game, then append it to the correct element
-firstGameContainer.innerHTML = `<h3>${topGame.title}</h3><p>Pledged: $${topGame.pledged.toLocaleString()}</p>`;
+// Create a new element to hold the name of the top pledge game, then append it to the correct element
+firstGameContainer.innerHTML = topGame
+    ? `<h3>${topGame.name}</h3><p>Pledged: $${topGame.pledged.toLocaleString()}</p>`
+    : `<h3>No top game available</h3>`;
 
-// do the same for the runner up item
-secondGameContainer.innerHTML = `<h3>${runnerUp.title}</h3><p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>`;
+// Do the same for the runner-up item
+secondGameContainer.innerHTML = runnerUp
+    ? `<h3>${runnerUp.name}</h3><p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>`
+    : `<h3>No runner-up available</h3>`;
