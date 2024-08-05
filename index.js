@@ -36,8 +36,8 @@ function addGamesToPage(games) {
         // set the inner HTML using a template literal to display some info 
         // about each game
         gameCard.innerHTML = `
-            <img src="${game.image}" class="game-img" alt="${game.title}">
-            <h3>${game.title}</h3>
+            <img src="${game.img}" class="game-img" alt="${game.name}">
+            <h3>${game.name}</h3>
             <p>${game.description}</p>
             <p>Backers: ${game.backers.toLocaleString()}</p>
             <p>Amount Raised: $${game.pledged.toLocaleString()}</p>
@@ -47,6 +47,7 @@ function addGamesToPage(games) {
         gamesContainer.appendChild(gameCard);
     }
 }
+
 
 // call the function we just defined using the correct variable
 addGamesToPage(GAMES_JSON);
