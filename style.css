@@ -56,11 +56,12 @@ body {
 
 .game-card {
     background-color: #FFFFFF;
-    padding: 1%;
+    padding: 2%; /* Increased padding */
     margin: 1%;
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    position: relative; /* Ensure relative positioning for medals */
 }
 
 .game-card:hover {
@@ -79,3 +80,31 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+
+/* Medal styles */
+.medal-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 1% auto;
+    width: 300px;
+}
+
+.medal {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: auto;
+}
+
+/* Optional: Uncomment and customize if needed
+.gold-medal {
+    // Add specific styles for the gold medal here
+}
+
+.silver-medal {
+    // Add specific styles for the silver medal here
+}
+*/

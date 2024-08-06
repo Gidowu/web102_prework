@@ -111,12 +111,22 @@ const sortedGames = [...GAMES_JSON].sort((a, b) => b.pledged - a.pledged);
 // Use destructuring to grab the first and second games
 const [topGame, runnerUp] = sortedGames;
 
-// Display the top game
+// Display the top game with a gold medal
 firstGameContainer.innerHTML = topGame
-    ? `<h3>${topGame.name}</h3><p>Pledged: $${topGame.pledged.toLocaleString()}</p>`
+    ? `
+        <div class="medal-container">
+            <img src="gold-medal.png" class="medal gold-medal" alt="Gold Medal">
+            <h3>${topGame.name}</h3>
+            <p>Pledged: $${topGame.pledged.toLocaleString()}</p>
+        </div>`
     : `<h3>No top game available</h3>`;
 
-// Display the second most funded game
+// Display the runner-up game with a silver medal
 secondGameContainer.innerHTML = runnerUp
-    ? `<h3>${runnerUp.name}</h3><p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>`
+    ? `
+        <div class="medal-container">
+            <img src="silver-medal.png" class="medal silver-medal" alt="Silver Medal">
+            <h3>${runnerUp.name}</h3>
+            <p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>
+        </div>`
     : `<h3>No runner-up available</h3>`;
