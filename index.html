@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sea Monster Crowdfunding</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
     <!-- header row with logo -->
     <div class="header">
-        <img id="tentacles" src="assets/tentacles.png">
+        <img id="tentacles" src="assets/tentacles.png" alt="Sea Monster Logo">
         <h1 class="header-text">Sea Monster Crowdfunding</h1>
     </div>
 
@@ -24,26 +25,33 @@
     <div class="stats-container">
         <div class="stats-card">
             <h3>Individual Contributions</h3>
-            <p id="num-contributions">
-            </p>
+            <p id="num-contributions"></p>
         </div>
         <div class="stats-card">
             <h3>Total Raised</h3>
-            <p id="total-raised">
-            </p>
+            <p id="total-raised"></p>
         </div>
         <div class="stats-card">
             <h3>Total Number of Games</h3>
-            <p id="num-games">
-            </p>
+            <p id="num-games"></p>
         </div>
     </div>
     <div class="stats-container" id="top-games">
         <div class="stats-card" id="first-game">
-            <h3>🥇 Top Funded Game</h3>
+            <div class="game-title">
+                <h3>🥇 Top Funded Game</h3>
+            </div>
+            <div class="game-details">
+                <!-- Top funded game details will be dynamically added here -->
+            </div>
         </div>
         <div class="stats-card" id="second-game">
-            <h3>🥈 Runner Up</h3>
+            <div class="game-title">
+                <h3>🥈 Runner Up</h3>
+            </div>
+            <div class="game-details">
+                <!-- Runner-up game details will be dynamically added here -->
+            </div>
         </div>
     </div>
 
@@ -55,9 +63,7 @@
         <button id="funded-btn">Show Funded Only</button>
         <button id="all-btn">Show All Games</button>
     </div>
-    <div id="games-container">
-
-    </div>
+    <div id="games-container"></div>
 
     <script type="module" src="index.js"></script>
   </body>

@@ -1,4 +1,4 @@
-// Import the JSON data about the crowd funded games from the games.js file
+// Import the JSON data about the crowd-funded games from the games.js file
 import GAMES_DATA from './games.js';
 
 // Create a list of objects to store the data about the games using JSON.parse
@@ -112,11 +112,11 @@ const sortedGames = [...GAMES_JSON].sort((a, b) => b.pledged - a.pledged);
 const [topGame, runnerUp] = sortedGames;
 
 // Display the top game
-firstGameContainer.innerHTML = topGame
-    ? `<h3>${topGame.name}</h3><p>Pledged: $${topGame.pledged.toLocaleString()}</p>`
-    : `<h3>No top game available</h3>`;
+firstGameContainer.querySelector('.game-details').innerHTML = topGame
+    ? `<h4>${topGame.name}</h4><p>Pledged: $${topGame.pledged.toLocaleString()}</p>`
+    : `<p>No top game available</p>`;
 
 // Display the second most funded game
-secondGameContainer.innerHTML = runnerUp
-    ? `<h3>${runnerUp.name}</h3><p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>`
-    : `<h3>No runner-up available</h3>`;
+secondGameContainer.querySelector('.game-details').innerHTML = runnerUp
+    ? `<h4>${runnerUp.name}</h4><p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>`
+    : `<p>No runner-up available</p>`;
