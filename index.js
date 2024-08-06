@@ -25,7 +25,7 @@ function addGamesToPage(games) {
             <h3>${game.name}</h3>
             <p>${game.description}</p>
             <p>Backers: ${game.backers.toLocaleString()}</p>
-            <p>Amount Raised: $${game.pledged.toLocaleString()}</p>
+            <!-- Removed Amount Raised line -->
         `;
 
         gamesContainer.appendChild(gameCard);
@@ -38,16 +38,16 @@ addGamesToPage(GAMES_JSON);
 // Grab the contributions card element
 const contributionsCard = document.getElementById("num-contributions");
 const totalContributions = GAMES_JSON.reduce((acc, game) => acc + game.backers, 0);
-contributionsCard.innerHTML = ` ${totalContributions.toLocaleString()}`;
+contributionsCard.innerHTML = `${totalContributions.toLocaleString()}`;
 
 // Grab the amount raised card
 const raisedCard = document.getElementById("total-raised");
 const totalRaised = GAMES_JSON.reduce((acc, game) => acc + game.pledged, 0);
-raisedCard.innerHTML = ` $${totalRaised.toLocaleString()}`;
+raisedCard.innerHTML = `$${totalRaised.toLocaleString()}`;
 
 // Grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-gamesCard.innerHTML = ` ${GAMES_JSON.length}`;
+gamesCard.innerHTML = `${GAMES_JSON.length}`;
 
 // Show only games that do not yet have enough funding
 function filterUnfundedOnly() {
