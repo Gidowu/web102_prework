@@ -38,16 +38,16 @@ addGamesToPage(GAMES_JSON);
 // Grab the contributions card element
 const contributionsCard = document.getElementById("num-contributions");
 const totalContributions = GAMES_JSON.reduce((acc, game) => acc + game.backers, 0);
-contributionsCard.innerHTML = `Total Contributions: ${totalContributions.toLocaleString()}`;
+contributionsCard.innerHTML = ` ${totalContributions.toLocaleString()}`;
 
 // Grab the amount raised card
 const raisedCard = document.getElementById("total-raised");
 const totalRaised = GAMES_JSON.reduce((acc, game) => acc + game.pledged, 0);
-raisedCard.innerHTML = `Total Raised: $${totalRaised.toLocaleString()}`;
+raisedCard.innerHTML = ` $${totalRaised.toLocaleString()}`;
 
 // Grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-gamesCard.innerHTML = `Number of Games: ${GAMES_JSON.length}`;
+gamesCard.innerHTML = ` ${GAMES_JSON.length}`;
 
 // Show only games that do not yet have enough funding
 function filterUnfundedOnly() {
@@ -88,8 +88,8 @@ const numberOfUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal
 // Create a dynamic message based on the number of unfunded games
 const displayStr = `
     A total of $${totalRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} game(s). 
-    ${numberOfUnfundedGames === 1 
-        ? `Currently, 1 game remains unfunded.` 
+    ${numberOfUnfundedGames === 1
+        ? `Currently, 1 game remains unfunded.`
         : `Currently, ${numberOfUnfundedGames} games remain unfunded.`} 
     We need your help to fund these amazing games!
 `;
@@ -113,10 +113,10 @@ const [topGame, runnerUp] = sortedGames;
 
 // Display the top game
 firstGameContainer.querySelector('.game-details').innerHTML = topGame
-    ? `<h4>${topGame.name}</h4><p>Pledged: $${topGame.pledged.toLocaleString()}</p>`
+    ? `<h4>${topGame.name}</h4>`
     : `<p>No top game available</p>`;
 
 // Display the second most funded game
 secondGameContainer.querySelector('.game-details').innerHTML = runnerUp
-    ? `<h4>${runnerUp.name}</h4><p>Pledged: $${runnerUp.pledged.toLocaleString()}</p>`
+    ? `<h4>${runnerUp.name}</h4>`
     : `<p>No runner-up available</p>`;
