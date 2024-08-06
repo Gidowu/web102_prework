@@ -36,8 +36,8 @@ GIF created with LiceCap...
 
 Describe any challenges encountered while building the app.
 
-1. Creating a GIF walkthrough of the website
-2. Implementing the filtering functionality in the Our Games section to dynamically display only unfunded, funded, or all games based on user selection.
+1. Creating a GIF walkthrough of the website.
+   
 
 ## License
 
